@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Maze extends JPanel{
-    private Entity[] items = new Entity[3];
+    private Entity[] items = new Entity[7];
 
     public void paintComponent(Graphics g)
     {
@@ -28,11 +28,11 @@ public class Maze extends JPanel{
     {
         Pacman pac = (Pacman) items[0];
 
-        for(int i= 1; i<items.length; i++)
+        for(int i= 1; i<items.length - 1; i++)
         {
             if (pac.getX() ==  items[i].getX() && pac.getY() ==  items[i].getY() )
             {
-                if (items[i] instanceof Ghost)
+                if (items[i] instanceof RedGhost || items[i] instanceof GreenGhost || items[i] instanceof BlueGhost || items[i] instanceof OrangeGhost)
                 {
                     pac.setX();
                     pac.setY();
@@ -47,11 +47,17 @@ public class Maze extends JPanel{
 
     }
 
-    Maze(Pacman pacman, Ghost ghost, PowerDot power_dot)
+    Maze(Pacman pacman, GreenGhost greenGhost, RedGhost redGhost, BlueGhost blueGhost, OrangeGhost orangeGhost,
+          PowerDot power_dot, ScoreBoard scoreBoard)
     {
         items[0] = pacman;
-        items[1] = ghost;
-        items[2] = power_dot;
+        items[1] = greenGhost;
+        items[2] = blueGhost;
+        items[3] = orangeGhost;
+        items[4] = redGhost;
+        items[5] = power_dot;
+        items[6] = (Entity) scoreBoard;
+
     }
 
 }

@@ -1,9 +1,12 @@
 import java.awt.*;
 
-public class BlueGhost implements Drawable
+public class BlueGhost implements Entity
 {
-    private short posX = (short) (Math.random() * 20 * 20);
-    private short posY = (short) (Math.random() * 20 * 20);
+    private short posX = (short) (100);
+    private short posY = (short) (100);
+    public short getX(){return posX;}
+
+    public short getY(){return posY;}
 
     public void draw(Graphics g)
     {

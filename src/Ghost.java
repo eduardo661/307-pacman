@@ -5,6 +5,7 @@ public class Ghost implements Entity
     private short posX = 400;
     private short posY = 400;
 
+
     public void draw(Graphics g)
     {
         g.setColor(Color.RED);

@@ -1,9 +1,11 @@
 import java.awt.*;
 
-public class OrangeGhost implements Drawable
+public class OrangeGhost implements Entity
 {
-    private short posX = (short) (Math.random() * 20 * 20);
-    private short posY = (short) (Math.random() * 20 * 20);
+    private short posX = (short) 200;
+    private short posY = (short) 200;
+    public short getX(){return posX;}
+    public short getY(){return posY;}
 
     public void draw(Graphics g)
     {
@@ -16,6 +18,8 @@ public class OrangeGhost implements Drawable
         g.setColor(Color.WHITE);
         g.fillOval(posX+2, posY+5, 2, 2);
         g.fillOval(posX+10, posY+5, 2, 2);
+
+
 
         if (Math.random() > 0.5)
         {

@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class ScoreBoard implements Drawable
+public class ScoreBoard implements Entity
 {
     private short posX = 400;
     private short posY = 0;
@@ -9,6 +9,8 @@ public class ScoreBoard implements Drawable
     public int getPoints(){
         return this.points;
     }
+    public short getX(){return posX;}
+    public short getY(){return posY;}
     public void setPoints(int x){
         this.points = x;
     }

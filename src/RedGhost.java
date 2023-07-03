@@ -1,9 +1,13 @@
 import java.awt.*;
 
-public class RedGhost implements Drawable
+public class RedGhost implements Entity
 {
-    private short posX = (short) (Math.random() * 20 * 20);
-    private short posY = (short) (Math.random() * 20 * 20);
+    private short posX = (short) (160);
+    private short posY = (short) (300);
+
+    public short getX(){return posX;}
+
+    public short getY(){return posY;}
 
     public void draw(Graphics g)
     {
