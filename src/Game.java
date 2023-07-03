@@ -7,15 +7,21 @@ import java.awt.event.KeyListener;
 public class Game extends JFrame implements ActionListener, KeyListener {
     private Maze maze;
     private Pacman pacman;
-    private Ghost ghost;
+    private GreenGhost green_ghost;
+    private RedGhost red_ghost;
+    private BlueGhost blue_ghost;
+    private OrangeGhost orange_ghost;
     private PowerDot power_dot;
 
     public Game()
     {
         pacman = new Pacman();
-        ghost = new Ghost();
+        green_ghost = new GreenGhost();
+        red_ghost = new RedGhost();
+        blue_ghost = new BlueGhost();
+        orange_ghost = new OrangeGhost();
         power_dot = new PowerDot((short)60,(short)60);
-        maze = new Maze(pacman, ghost, power_dot);
+        maze = new Maze(pacman, green_ghost, red_ghost, blue_ghost, orange_ghost, power_dot);
         this.getContentPane().add(maze);
         this.addKeyListener(this);
     }
@@ -50,7 +56,6 @@ public class Game extends JFrame implements ActionListener, KeyListener {
             case KeyEvent.VK_DOWN: pacman.down(); break;
             case KeyEvent.VK_LEFT: pacman.left(); break;
             case KeyEvent.VK_RIGHT: pacman.right(); break;
-
         }
     }
 

@@ -2,18 +2,19 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Maze extends JPanel{
-    private Drawable[] items = new Drawable[3];
+    private Drawable[] items = new Drawable[6];
+    public static final Color VERY_LIGHT_GRAY = new Color(230,230,230);
 
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        g.setColor(Color.LIGHT_GRAY);
+        g.setColor(VERY_LIGHT_GRAY);
         g.drawRect(0,0,500,500);
-        for(int x = 0; x < 500; x += 10)
+        for(int x = 0; x < 500; x += 20)
         {
             g.drawLine(x, 0, x, 500);
         }
-        for(int y = 0; y < 500; y += 10)
+        for(int y = 0; y < 500; y += 20)
         {
             g.drawLine(0, y, 500, y);
         }
@@ -23,11 +24,14 @@ public class Maze extends JPanel{
         }
     }
 
-    Maze(Pacman pacman, Ghost ghost, PowerDot power_dot)
+    Maze(Pacman pacman, GreenGhost green_ghost, RedGhost red_ghost, BlueGhost blue_ghost, OrangeGhost orange_ghost, PowerDot power_dot)
     {
         items[0] = pacman;
-        items[1] = ghost;
-        items[2] = power_dot;
+        items[1] = green_ghost;
+        items[2] = red_ghost;
+        items[3] = blue_ghost;
+        items[4] = orange_ghost;
+        items[5] = power_dot;
     }
 
 }
