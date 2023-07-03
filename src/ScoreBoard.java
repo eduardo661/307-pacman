@@ -6,7 +6,7 @@ public class ScoreBoard implements Drawable
     private short posY = 0;
     private Integer points = 0;
 
-    public void int getPoints(){
+    public int getPoints(){
         return this.points;
     }
     public void setPoints(int x){
