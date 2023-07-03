@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Pacman implements Drawable
+public class Pacman implements Entity
 {
     private short posX;
     private short posY;
@@ -15,6 +15,14 @@ public class Pacman implements Drawable
         if (posX < 0) posX = 0;
         if (posY < 0) posY = 0;
     }
+    public short getX(){return posX;}
+
+    public short getY(){return posY;}
+
+    public void setX(){ posX = 0;}
+
+    public void setY(){posY = 0;}
+
 
     public void up() 
     {

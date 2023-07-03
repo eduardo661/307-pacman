@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class PowerDot implements Drawable
+public class PowerDot implements Entity
 {
     private short posX;
     private short posY;
@@ -10,6 +10,10 @@ public class PowerDot implements Drawable
         posX = x;
         posY = y;
     }
+
+    public short getX(){return posX;}
+
+    public short getY(){return posY;}
 
     public void draw(Graphics g)
     {

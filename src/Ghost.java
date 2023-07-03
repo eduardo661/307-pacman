@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Ghost implements Drawable
+public class Ghost implements Entity
 {
     private short posX = 400;
     private short posY = 400;
@@ -26,4 +26,8 @@ public class Ghost implements Drawable
         if (posX < 0) posX = 0;
         if (posY < 0) posY = 0;
     }
+
+    public short getX(){return posX;}
+
+    public short getY(){return posY;}
 }

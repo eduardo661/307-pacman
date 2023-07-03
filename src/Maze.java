@@ -2,10 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Maze extends JPanel{
-    private Drawable[] items = new Drawable[3];
+    private Entity[] items = new Entity[3];
 
     public void paintComponent(Graphics g)
     {
+        detectCollision();
         super.paintComponent(g);
         g.setColor(Color.LIGHT_GRAY);
         g.drawRect(0,0,500,500);
@@ -21,6 +22,29 @@ public class Maze extends JPanel{
         {
             items[i].draw(g);
         }
+    }
+
+    public void detectCollision()
+    {
+        Pacman pac = (Pacman) items[0];
+
+        for(int i= 1; i<items.length; i++)
+        {
+            if (pac.getX() ==  items[i].getX() && pac.getY() ==  items[i].getY() )
+            {
+                if (items[i] instanceof Ghost)
+                {
+                    pac.setX();
+                    pac.setY();
+                }
+                else if(items[i] instanceof PowerDot)
+                {
+
+                }
+
+            }
+        }
+
     }
 
     Maze(Pacman pacman, Ghost ghost, PowerDot power_dot)
