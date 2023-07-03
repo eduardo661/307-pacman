@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Maze extends JPanel{
-    private Drawable[] items = new Drawable[6];
+    private Drawable[] items = new Drawable[7];
     public static final Color VERY_LIGHT_GRAY = new Color(230,230,230);
 
     public void paintComponent(Graphics g)
@@ -24,7 +24,7 @@ public class Maze extends JPanel{
         }
     }
 
-    Maze(Pacman pacman, GreenGhost green_ghost, RedGhost red_ghost, BlueGhost blue_ghost, OrangeGhost orange_ghost, PowerDot power_dot)
+    Maze(Pacman pacman, GreenGhost green_ghost, RedGhost red_ghost, BlueGhost blue_ghost, OrangeGhost orange_ghost, PowerDot power_dot, ScoreBoard scoreBoard)
     {
         items[0] = pacman;
         items[1] = green_ghost;
@@ -32,6 +32,7 @@ public class Maze extends JPanel{
         items[3] = blue_ghost;
         items[4] = orange_ghost;
         items[5] = power_dot;
+        items[6] = scoreBoard;
     }
 
 }

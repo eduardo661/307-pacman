@@ -12,6 +12,7 @@ public class Game extends JFrame implements ActionListener, KeyListener {
     private BlueGhost blue_ghost;
     private OrangeGhost orange_ghost;
     private PowerDot power_dot;
+    private ScoreBoard scoreBoard;
 
     public Game()
     {
@@ -21,7 +22,8 @@ public class Game extends JFrame implements ActionListener, KeyListener {
         blue_ghost = new BlueGhost();
         orange_ghost = new OrangeGhost();
         power_dot = new PowerDot((short)60,(short)60);
-        maze = new Maze(pacman, green_ghost, red_ghost, blue_ghost, orange_ghost, power_dot);
+        scoreBoard = new ScoreBoard();
+        maze = new Maze(pacman, green_ghost, red_ghost, blue_ghost, orange_ghost, power_dot, scoreBoard);
         this.getContentPane().add(maze);
         this.addKeyListener(this);
     }
