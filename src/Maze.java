@@ -36,10 +36,15 @@ public class Maze extends JPanel{
                 {
                     pac.setX();
                     pac.setY();
+                    ScoreBoard sb = (ScoreBoard)items[6];
+                    sb.setPoints(0);
                 }
                 else if(items[i] instanceof PowerDot)
                 {
-
+                    ScoreBoard sb = (ScoreBoard)items[6];
+                    int points = sb.getPoints();
+                    points = points + 1;
+                    sb.setPoints(points);
                 }
 
             }
@@ -48,7 +53,7 @@ public class Maze extends JPanel{
     }
 
     Maze(Pacman pacman, GreenGhost greenGhost, RedGhost redGhost, BlueGhost blueGhost, OrangeGhost orangeGhost,
-          PowerDot power_dot, ScoreBoard scoreBoard)
+         PowerDot power_dot, ScoreBoard scoreBoard)
     {
         items[0] = pacman;
         items[1] = greenGhost;
