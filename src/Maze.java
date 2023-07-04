@@ -42,9 +42,9 @@ public class Maze extends JPanel{
                 else if(items[i] instanceof PowerDot)
                 {
                     ScoreBoard sb = (ScoreBoard)items[6];
-                    int points = sb.getPoints();
-                    points = points + 1;
-                    sb.setPoints(points);
+                    int point = sb.getPoints();
+                    point = point + 1;
+                    sb.setPoints(point);
                 }
 
             }
