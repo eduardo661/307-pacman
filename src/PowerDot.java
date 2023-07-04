@@ -15,6 +15,14 @@ public class PowerDot implements Entity
 
     public short getY(){return posY;}
 
+    public void setX(short newX){
+        this.posX = newX;
+    }
+
+    public void setY(short newY){
+        this.posY = newY;
+    }
+
     public void draw(Graphics g)
     {
         g.setColor(Color.WHITE);

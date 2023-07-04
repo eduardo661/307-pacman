@@ -30,7 +30,7 @@ public class Maze extends JPanel{
 
         for(int i= 1; i<items.length - 1; i++)
         {
-            if (pac.getX() ==  items[i].getX() && pac.getY() ==  items[i].getY() )
+            if (pac.getX() == items[i].getX() && pac.getY() ==  items[i].getY() )
             {
                 if (items[i] instanceof RedGhost || items[i] instanceof GreenGhost || items[i] instanceof BlueGhost || items[i] instanceof OrangeGhost)
                 {
@@ -45,6 +45,14 @@ public class Maze extends JPanel{
                     int point = sb.getPoints();
                     point = point + 1;
                     sb.setPoints(point);
+
+                    PowerDot pd = (PowerDot)items[i];
+                    int min = 0, max = 20;                    
+                    int newPosX = (int) (Math.floor(Math.random() * (max - min + 1) + min)) * 20;
+                    int newPosY = (int) (Math.floor(Math.random() * (max - min + 1) + min)) * 20;
+
+                    pd.setX((short) newPosX);
+                    pd.setY((short) newPosY);
                 }
 
             }
